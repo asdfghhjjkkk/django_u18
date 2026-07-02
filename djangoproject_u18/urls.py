@@ -1,22 +1,13 @@
-"""
-URL configuration for djangoproject_u18 project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
+from page.views import get_product, detail_product, create_product,update_product,delete_product
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', get_product, name='list'),
+    path('create/', create_product, name='create'),
+    path('update/<int:pk>/', update_product, name='update'),
+    path('detail/<int:pk>/', detail_product, name='detail'),
+    path('delete/<int:pk>/', delete_product, name='delete'),
 ]

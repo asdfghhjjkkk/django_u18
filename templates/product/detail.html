@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content  %}
+
+
+<p>Id: {{ product.id }}</p>
+<p>Title: {{ product.title }}</p>
+    <p>Narxi: {{ product.price }}</p>
+    <p>Vaqti: {{ product.created_at }}%</p>
+    <hr>
+<a href="{% url 'list' %}"><p>Back</p></a>
+{% endblock content  %}
